@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test task</title>
+  </head>
+  <body hidden>
+    <main class="main">
+      <form class="form" id="form">
+        <div class="field form__field form__name">
+          <label for="name" class="field__label">Имя*</label>
+          <input type="text" class="field__input" id="name" />
+          <p class="field__error"></p>
+        </div>
+        <div class="field form__field form__email">
+          <label for="email" class="field__label">Email*</label>
+          <input type="text" class="field__input" id="email" />
+          <p class="field__error"></p>
+        </div>
+        <div class="field form__field form__phone">
+          <label for="phone" class="field__label">Телефон*</label>
+          <input type="text" class="field__input" id="phone" />
+          <p class="field__error"></p>
+        </div>
+        <div class="field form__field form__message">
+          <label for="message" class="field__label">Сообщение*</label>
+          <textarea class="field__textarea" id="message"></textarea>
+          <p class="field__error"></p>
+        </div>
+        <button class="button form__submit" type="submit">Отправить</button>
+        <p class="form__result" id="result"></p>
+      </form>
+      <div class="modal-wrapper">
+        <button class="button" id="modal-open-button">
+          Показать модальное окно
+        </button>
+        <div class="modal" id="modal">
+          <div class="modal__content">
+            <span class="modal__close" id="modal-close-button"></span>
+            <h2 class="modal__title">Модальное окно</h2>
+            <p class="modal__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Laudantium temporibus facere earum sit dolores. Quis iusto dolores
+              explicabo velit quo tempora, sunt cum nihil ea maxime maiores
+              odit. Facilis, consequuntur? Obcaecati tenetur, cupiditate id est
+              explicabo magnam recusandae excepturi ea veniam eum blanditiis
+              quisquam eius voluptates. Animi eum voluptates saepe pariatur
+              exercitationem? Ipsa, autem nisi. Aliquid voluptas consequatur
+              nihil dolorem.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

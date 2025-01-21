@@ -1,0 +1,106 @@
+@use "@styles/mixins/breakpoints";
+
+.form {
+  display: grid;
+  gap: 16px;
+  background-color: white;
+  border-radius: 8px;
+
+  @include breakpoints.for(desktop) {
+    grid-template-areas:
+      "name email phone"
+      "message message message"
+      ". . submit"
+      "result result result";
+    padding: 32px;
+  }
+
+  @include breakpoints.for(phone) {
+    grid-template-areas:
+      "name"
+      "email"
+      "phone"
+      "message"
+      "submit"
+      "result";
+    padding: 16px;
+  }
+
+  &__name {
+    grid-area: name;
+  }
+
+  &__phone {
+    grid-area: phone;
+  }
+
+  &__email {
+    grid-area: email;
+  }
+
+  &__message {
+    grid-area: message;
+  }
+
+  &__submit {
+    grid-area: submit;
+    justify-self: end;
+  }
+
+  &__result {
+    grid-area: result;
+  }
+
+  .field {
+    display: grid;
+    align-content: start;
+    gap: 8px;
+
+    @include breakpoints.for(desktop) {
+      min-block-size: 96px;
+    }
+
+    @include breakpoints.for(tablet) {
+      min-block-size: 83.5px;
+    }
+
+    @include breakpoints.for(phone) {
+      min-block-size: 77.5px;
+    }
+
+    &:has(textarea) {
+      min-block-size: 170px;
+    }
+
+    &__label,
+    &__input,
+    &__textarea {
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    &__input,
+    &__textarea {
+      padding: 11px 15px;
+      background-color: #fff;
+      border-radius: 8px;
+      border: 1px solid black;
+
+      &.error {
+        border: 1px solid red;
+      }
+    }
+
+    &__textarea {
+      min-block-size: 120px;
+    }
+
+    &__error {
+      color: red;
+      font-size: 0.75rem;
+      font-weight: 500;
+      line-height: 1;
+    }
+  }
+}

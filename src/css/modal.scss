@@ -1,0 +1,85 @@
+@use "@styles/mixins/breakpoints";
+
+.modal {
+  position: fixed;
+  inset: 0;
+  inline-size: 100vw;
+  block-size: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: #00000020;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transition:
+    transform 0.5s ease-out,
+    opacity 0.5s ease-out;
+
+  &_opened {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+  }
+
+  &__content {
+    background-color: white;
+    inline-size: 100%;
+    min-inline-size: 320px;
+    max-inline-size: 540px;
+    max-block-size: 380px;
+    display: grid;
+    justify-items: center;
+    overflow: auto;
+
+    @include breakpoints.for(desktop) {
+      padding: 32px;
+      gap: 32px;
+    }
+
+    @include breakpoints.for(phone) {
+      padding: 16px;
+      gap: 16px;
+    }
+  }
+
+  &__close {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    inline-size: 24px;
+    block-size: 24px;
+    justify-self: right;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      inline-size: 100%;
+      block-size: 4px;
+      border-radius: 4px;
+      background-color: #000;
+      inset-block-start: 50%;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__description {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: center;
+  }
+}

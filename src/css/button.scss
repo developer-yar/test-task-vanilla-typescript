@@ -1,0 +1,11 @@
+.button {
+  background-color: black;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  min-inline-size: 192px;
+
+  &:hover {
+    background-color: #202020;
+  }
+}
